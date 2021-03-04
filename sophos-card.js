@@ -51,7 +51,7 @@ export class SophosCard extends LitElement {
   createSubtitle() {
     if(this.subtitle !== '') {
       return html`
-        <h3>${this.subtitle}</h3>
+        <h3 id="subtitle">${this.subtitle}</h3>
       `;
     }
   }
@@ -59,7 +59,7 @@ export class SophosCard extends LitElement {
   createDescription() {
     if(this.description !== '') {
       return html `
-        <p>
+        <p id="description">
           ${this.description}
         </p> 
       `;
