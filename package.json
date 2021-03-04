@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve": "es-dev-server --app-index demo/index.html --node-resolve --watch --open",
+    "test": "karma start --coverage",
+    "test:watch": "karma start --auto-watch=true --single-run=false",
+    "test:update-snapshots": "karma start --update-snapshots",
+    "test:prune-snapshots": "karma start --prune-snapshots"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +17,10 @@
     "lit-element": "^2.4.0"
   },
   "devDependencies": {
-    "es-dev-server": "^2.1.0"
+    "@open-wc/testing": "^2.5.32",
+    "@open-wc/testing-karma": "^4.0.9",
+    "deepmerge": "^4.2.2",
+    "es-dev-server": "^2.0.2",
+    "karma": "^5.2.3"
   }
 }
