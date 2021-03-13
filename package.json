@@ -2,7 +2,8 @@
   "name": "sophos-card",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "sophos-card.js",
+  "module": "sophos-card.js",
   "scripts": {
     "serve": "es-dev-server --app-index demo/index.html --node-resolve --watch --open",
     "test": "karma start --coverage",
