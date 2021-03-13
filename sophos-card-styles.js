@@ -16,16 +16,22 @@ export default css`
     overflow: var(--sophos-card-picture-container-overflow, hidden);
     width: var(--sophos-card-picture-container-width, 300px);
     height: var(--sophos-card-picture-container-height, 300px);
+    background-color: var(--sophos-card-picture-container-background-color, none);
   }
 
   #picture {
     width: var(--sophos-card-picture-width, 300px);
     height: var(--sophos-card-picture-height, 300px);
+    max-width: var(--sophos-card-picture-max-width, 300px);
+    max-height: var(--sophos-card-picture-max-height, 300px);
+    min-width: var(--sophos-card-picture-min-width, 300px);
+    min-height: var(--sophos-card-picture-min-height, 300px);
     border-radius: var(--sophos-card-picture-border-radius, 50px);
   }
 
   #title {
     text-align: var(--sophos-card-title-text-align, justify);
+    margin-block-start: var(--sophos-card-title-margin-block-start, 5px);
   }
 
   #subtitle {
