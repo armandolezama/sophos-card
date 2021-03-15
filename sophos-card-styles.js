@@ -1,11 +1,24 @@
 import { css } from 'lit-element';
 
 export default css`
+    :host {
+    --sophos-card-host-width: 300px;
+    --sophos-card-host-max-width: auto;
+    --sophos-card-host-min-width: auto;
+    --sophos-card-host-height: auto;
+    --sophos-card-host-max-height: auto;
+    --sophos-card-host-min-height: auto;
+  }
+
   #main-container {
     display: var(--sophos-card-main-container-display, inline-flex);
     flex-direction: var(--sophos-card-main-container-flex-direction, column);
-    width: var(--sophos-card-main-container-width, 300px);
-    height: var(--sophos-card-main-container-height, 800ox);
+    width: var(--sophos-card-main-container-width, var(--sophos-card-host-width));
+    max-width: var(--sophos-card-main-container-max-width, var(--sophos-card-host-max-width));
+    min-width: var(--sophos-card-main-container-min-width, var(--sophos-card-host-min-width));
+    height: var(--sophos-card-main-container-height, var(--sophos-card-host-height));
+    max-height: var(--sophos-card-main-container-max-height, var(--sophos-card-host-max-height));
+    min-height: var(--sophos-card-main-container-min-height, var(--sophos-card-host-min-height));
     justify-content: var(--sophos-card-main-container-justify-content, center);
     align-items: var(--sophos-card-main-container-align-items, center);
     border-style: var(--sophos-card-main-container-border-style, solid);
@@ -14,18 +27,22 @@ export default css`
 
   #picture-container {
     overflow: var(--sophos-card-picture-container-overflow, hidden);
-    width: var(--sophos-card-picture-container-width, 300px);
-    height: var(--sophos-card-picture-container-height, 300px);
+    width: var(--sophos-card-picture-container-width, var(--sophos-card-host-width));
+    max-width: var(--sophos-card-picture-container-max-width, var(--sophos-card-host-max-width));
+    min-width: var(--sophos-card-picture-container-min-width, var(--sophos-card-host-min-width));
+    height: var(--sophos-card-picture-container-height, var(--sophos-card-host-height));
+    max-height: var(--sophos-card-picture-container-max-height, var(--sophos-card-host-max-height));
+    min-height: var(--sophos-card-picture-container-min-height, var(--sophos-card-host-min-height));
     background-color: var(--sophos-card-picture-container-background-color, none);
   }
 
   #picture {
-    width: var(--sophos-card-picture-width, 300px);
-    height: var(--sophos-card-picture-height, 300px);
-    max-width: var(--sophos-card-picture-max-width, 300px);
-    max-height: var(--sophos-card-picture-max-height, 300px);
-    min-width: var(--sophos-card-picture-min-width, 300px);
-    min-height: var(--sophos-card-picture-min-height, 300px);
+    width: var(--sophos-card-picture-width, var(--sophos-card-host-width));
+    max-width: var(--sophos-card-picture-max-width, var(--sophos-card-host-max-width));
+    min-width: var(--sophos-card-picture-min-width, var(--sophos-card-host-min-width));
+    height: var(--sophos-card-picture-height, var(--sophos-card-host-height));
+    max-height: var(--sophos-card-picture-max-height, var(--sophos-card-host-max-height));
+    min-height: var(--sophos-card-picture-min-height, var(--sophos-card-host-min-height));
     border-radius: var(--sophos-card-picture-border-radius, 50px);
   }
 
