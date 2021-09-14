@@ -16,5 +16,5 @@ describe('Suite cases', () => {
         assert.strictEqual(_element.title, mocks.title);
         assert.strictEqual(_element.subtitle, mocks.subtitle);
         assert.strictEqual(_element.description, mocks.description);
-    })
-})
+    });
+});

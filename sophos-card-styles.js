@@ -11,6 +11,8 @@ export default css`
   }
 
   #main-container {
+    cursor: var(--sophos-card-main-container-cursor, default);
+    background-color: var(--sophos-card-main-container-background-color, #ffffff);
     display: var(--sophos-card-main-container-display, inline-flex);
     flex-direction: var(--sophos-card-main-container-flex-direction, column);
     width: var(--sophos-card-main-container-width, var(--sophos-card-host-width));
@@ -26,6 +28,8 @@ export default css`
   }
 
   #picture-container {
+    cursor: var(--sophos-card-picture-container-cursor, default);
+    background-color: var(--sophos-card-picture-container-background-color, none);
     overflow: var(--sophos-card-picture-container-overflow, hidden);
     width: var(--sophos-card-picture-container-width, var(--sophos-card-host-width));
     max-width: var(--sophos-card-picture-container-max-width, var(--sophos-card-host-max-width));
@@ -34,6 +38,21 @@ export default css`
     max-height: var(--sophos-card-picture-container-max-height, var(--sophos-card-host-max-height));
     min-height: var(--sophos-card-picture-container-min-height, var(--sophos-card-host-min-height));
     background-color: var(--sophos-card-picture-container-background-color, none);
+  }
+
+  #title-container {
+    background-color: var(--sophos-card-title-container-background-color, none);
+    cursor: var(--sophos-card-title-container-cursor, default);
+  }
+
+  #subtitle-container {
+    background-color: var(--sophos-card-subtitle-container-background-color, none);
+    cursor: var(--sophos-card-subtitle-container-cursor, default);
+  }
+
+  #description-container{
+    background-color: var(--sophos-card-description-container-background-color, none);
+    cursor: var(--sophos-card-description-container-cursor, default);
   }
 
   #picture {
@@ -47,15 +66,18 @@ export default css`
   }
 
   #title {
+    color: var(--sophos-card-title-color, #000000);
     text-align: var(--sophos-card-title-text-align, justify);
     margin-block-start: var(--sophos-card-title-margin-block-start, 5px);
   }
 
   #subtitle {
+    color: var(--sophos-card-subtitle-color, #000000);
     text-align: var(--sophos-card-subtitle-text-align, justify);
   }
 
   #description {
+    color: var(--sophos-card-description-color, #000000);
     text-align: var(--sophos-card-description-text-align, justify);
     margin: var(--sophos-card-description-margin, 10px);
   }
