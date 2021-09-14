@@ -15,7 +15,9 @@ export class SophosCard extends LitElement {
     this.title = '';
     this.subtitle = '';
     this.description = '';
-  }
+    this.configContent = ['Pickture', 'Title', 'Subtitle', 'Description'];
+    this._contentBuilder = {};
+  };
 
   /**
     * Declared properties and their corresponding attributes
@@ -26,66 +28,115 @@ export class SophosCard extends LitElement {
       pictureAlt : { type: String },
       title : { type: String },
       subtitle : { type : String},
-      description : { type : String }
+      description : { type : String },
+      configContent : { type : Array },
+      _contentBuilder : { type : Object }
     };
-  }
+  };
 
+  firstUpdated() {
+    this._contentBuilder = {
+      'Pickture' : this._createPicture(),
+      'Title' : this._createTitle(),
+      'Subtitle' : this._createSubtitle(),
+      'Description' : this._createDescription()
+    };
+  };
+
+  /**
+   * @readonly property
+   * @static function
+   * @memberof SophosCard
+   * Styles getter for sophos-card-style.js
+   */
   static get styles() {
     return styles;
   };
 
-  createPicture() {
-    if(this.pictureSRC !== '' && this.pictureAlt !== ''){
-      return html`<img id="picture" src="${this.pictureSRC}" alt="${this.pictureAlt}">`
-    }
-  }
+  /**
+   *Fire event function for all click events from dom sections
+   * @param {*} e event object
+   * @memberof SophosCard
+   */
+  _fireClickEvent(e) {
+    this.dispatchEvent( new CustomEvent(`sophos-card-click-${e.target.id}`) );
+  };
 
-  createTitle() {
+  /**
+   * Build image template function. Setted by properties 
+   * @returns lit-html object
+   */
+  _createPicture() {
+    if(this.pictureSRC !== '' && this.pictureAlt !== ''){
+      return html`
+        <div id="picture-container">
+          <img 
+          id="picture" 
+          src="${this.pictureSRC}" 
+          alt="${this.pictureAlt}"
+          @click=${this._fireClickEvent}>
+        </div>
+      `;
+    };
+  };
+
+  /**
+   * Build title template function. Setted by properties 
+   * @returns lit-html object
+   */
+  _createTitle() {
     if(this.title !== ''){
       return html`
-        <h2 id="title">${this.title}</h2>
+        <h2 
+        id="title"
+        @click=${this._fireClickEvent}>
+        ${this.title}
+        </h2>
       `;
-    }
-  }
+    };
+  };
 
-  createSubtitle() {
+  /**
+   * Build subtitle template function. Setted by properties 
+   * @returns lit-html object
+   */
+  _createSubtitle() {
     if(this.subtitle !== '') {
       return html`
-        <h3 id="subtitle">${this.subtitle}</h3>
+        <h3 
+        id="subtitle"
+        @click=${this._fireClickEvent}>
+        ${this.subtitle}
+        </h3>
       `;
-    }
-  }
+    };
+  };
 
-  createDescription() {
+  /**
+   * Build description template function. Setted by properties 
+   * @returns lit-html object
+   */
+  _createDescription() {
     if(this.description !== '') {
       return html `
-        <p id="description">
-          ${this.description}
+        <p 
+        id="description"
+        @click=${this._fireClickEvent}>
+        ${this.description}
         </p> 
       `;
-    }
-  }
-
+    };
+  };
+  
   render() {
     return html`
     <div id="main-container">
-
-      <div id="picture-container">
-        ${this.createPicture()}
-      </div>
-      <div id="title-container">
-        ${this.createTitle()}
-      </div>
-
-      <div id="subtitle-container">
-        ${this.createSubtitle()}
-      </div>
-
-      <div id="description-container">
-        ${this.createDescription()}
-      </div>
+      ${this.configContent.map(( content )=> {
+        const contentBuilded = this._contentBuilder[content];
+        return contentBuilded;
+      })}
     </div>
     `;
-  }
-}
+  };
+};
 customElements.define('sophos-card', SophosCard);
