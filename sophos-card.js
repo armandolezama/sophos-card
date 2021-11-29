@@ -15,7 +15,7 @@ export class SophosCard extends LitElement {
     this.title = '';
     this.subtitle = '';
     this.description = '';
-    this.configContent = ['Pickture', 'Title', 'Subtitle', 'Description'];
+    this.configContent = [];
     this._contentBuilder = {};
   };
 
@@ -34,15 +34,6 @@ export class SophosCard extends LitElement {
     };
   };
 
-  firstUpdated() {
-    this._contentBuilder = {
-      'Pickture' : this._createPicture(),
-      'Title' : this._createTitle(),
-      'Subtitle' : this._createSubtitle(),
-      'Description' : this._createDescription()
-    };
-  };
-
   /**
    * @readonly property
    * @static function
@@ -51,6 +42,17 @@ export class SophosCard extends LitElement {
    */
   static get styles() {
     return styles;
+  };
+
+  
+  firstUpdated() {
+    super.firstUpdated();
+    this._contentBuilder = {
+      'pickture' : this._createPicture(),
+      'title' : this._createTitle(),
+      'subtitle' : this._createSubtitle(),
+      'description' : this._createDescription(),
+    };
   };
 
   /**
