@@ -1,9 +1,9 @@
 
 const card = document.querySelector('sophos-card');
 
-card.pictureSRC = './assets/K3.jpg';
-card.pictureAlt = './assets/alt-image';
-card.title = 'ÁREAS DE PRÁCTICA.';
-card.subtitle = 'MATERIA CIVIL Y FAMILIAR.';
-card.description = 'La práctica de los abogados postulantes se centra en el litigio civil ante los órganos jurisdiccionales, para la solución de conflictos derivados de las relaciones entre particulares. Para ello, este despacho cuenta con un área específica encargada de los juicios civiles, familiares, sucesorios y de arrendamiento, y con la experiencia necesaria y actualización en materia de juicios orales.';
+card.pictureSRC = './assets/design.png';
+card.pictureAlt = './assets/tree-three-image';
+card.title = 'TITLE FROM A CARD';
+card.subtitle = 'SUBTITLE FROM A CARD';
+card.description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent faucibus nulla a convallis scelerisque. Sed ac tempus ante. Etiam ipsum tellus, consequat in mollis tincidunt, euismod sit amet velit. Phasellus mattis, massa a euismod pharetra, est augue lacinia ex, sit amet eleifend lacus lacus bibendum nisi. Donec pellentesque, ex vel auctor facilisis, nisl lacus convallis nisi, id feugiat lectus dui ut odio. Cras eu dui turpis. Aenean sagittis purus eget ante tincidunt euismod. Nullam lacinia lacinia velit, eget semper nulla.';
 card.configContent = ['pickture', 'title', 'subtitle', 'description'];
